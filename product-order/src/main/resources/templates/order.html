@@ -1,0 +1,28 @@
+<html xmlns="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" <title>Order the product</title>
+</head>
+
+<body>
+    <h1>place and order</h1>
+
+    <form method="post" th:action="@{/api/order}">
+        <label for="productName"> productName</label>
+        <input type="text" id="productName" name="productName" required>
+
+        <label for="quantity"> productQuantity</label>
+        <input type="text" id="productQuantity" name="productQuantity" required>
+
+        <button type="submit">submit</button>
+    </form>
+
+    <div th:if="${param.success}">
+        <p>
+            Order Placed Succesfully
+        </p>
+    </div>
+
+</body>
+
+</html>
